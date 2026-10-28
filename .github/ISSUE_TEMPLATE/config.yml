@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "FrontSignal Master Backlog (GitHub Projects)"
+    url: "https://github.com/orgs/Front-Signal/projects"
+    about: "View the unified Kanban board, ownership table, and milestone gates across all repositories."

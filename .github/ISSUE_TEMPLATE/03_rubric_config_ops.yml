@@ -1,0 +1,42 @@
+name: "3. Rubric, Config & Operations Task"
+description: "Track non-code specifications, profile templates (Banker/VC/Incubator), rubrics, or ops tasks."
+title: "[Ops/Config]: "
+labels: ["class: config-change"]
+body:
+  - type: dropdown
+    id: lead_role
+    attributes:
+      label: "Accountable Lead Role"
+      options:
+        - "Product Lead"
+        - "Data/ML Lead"
+        - "Platform/Security Owner"
+        - "Engineering Lead"
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: "Target Customer Profile"
+      options:
+        - "Shared / All Profiles"
+        - "Banker"
+        - "VC"
+        - "Incubator"
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objective & Specification Details"
+    validations:
+      required: true
+  - type: textarea
+    id: lifecycle
+    attributes:
+      label: "Configuration & Review Lifecycle"
+      value: |
+        - [ ] Draft specification
+        - [ ] Schema & dependency validation
+        - [ ] Preview with synthetic/authorized data
+        - [ ] Stakeholder approval & versioned activation

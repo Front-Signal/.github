@@ -1,0 +1,81 @@
+name: "2. Shared Capability / Feature Specification"
+description: "Specify a committed product feature or MVP capability with a demonstrable test gate."
+title: "[Capability]: "
+labels: ["class: new-capability"]
+body:
+  - type: dropdown
+    id: layer
+    attributes:
+      label: "System Architecture Layer"
+      options:
+        - "1. Access (Customer Portal & Backend API Auth)"
+        - "2. Secure Ingestion (Quarantine, File Checks, Accepted Files)"
+        - "3. Background Processing (Job Queue, Isolated Parsing, Extraction)"
+        - "4. Private Storage (PostgreSQL RLS & Private Object Storage)"
+        - "5. Shared Product Services (Assessment, 3-5 Comparison, Rendering)"
+        - "6. Authorized Delivery (Dashboard & Short-Lived Report Download)"
+        - "Customer Configuration (Defaults -> Profile Template -> Overrides)"
+        - "Cross-Layer Controls (Tenant Isolation, AI Gateway, Audit & Recovery)"
+    validations:
+      required: true
+  - type: dropdown
+    id: classification
+    attributes:
+      label: "Request Classification"
+      options:
+        - "New Shared Capability"
+        - "Shared Enhancement"
+        - "Configuration Change"
+    validations:
+      required: true
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: "Target Milestone Gate"
+      options:
+        - "M1: Secure Foundation"
+        - "M2: Individual Assessment"
+        - "M3: Comparison & Profiles"
+        - "M4: Pilot Readiness"
+    validations:
+      required: true
+  - type: dropdown
+    id: lead_role
+    attributes:
+      label: "Accountable Lead Role"
+      options:
+        - "Engineering Lead (Architecture & Integration)"
+        - "Data/ML Lead (Extraction, Evaluation & Evidence Quality)"
+        - "Platform/Security Owner (Access, Tenant Isolation & Recovery)"
+        - "Product Lead (Scope, Customer Decisions & Acceptance Criteria)"
+    validations:
+      required: true
+  - type: input
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      placeholder: "e.g., Blocked by #1 (DB Setup), #2 (Portal Auth)"
+  - type: textarea
+    id: intended_behavior
+    attributes:
+      label: "Intended Behavior & Scope"
+      description: "What must this capability do, and what security/isolation invariants apply?"
+    validations:
+      required: true
+  - type: textarea
+    id: remaining_tasks
+    attributes:
+      label: "Remaining Implementation Tasks"
+      value: |
+        - [ ] Implementation task 1
+        - [ ] Implementation task 2
+    validations:
+      required: true
+  - type: textarea
+    id: demonstrated_behavior
+    attributes:
+      label: "Demonstrated Behavior (Acceptance Test Gate)"
+      description: "What concrete end-to-end test proves this capability is complete?"
+      placeholder: "Test: ..."
+    validations:
+      required: true

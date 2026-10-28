@@ -1,0 +1,62 @@
+name: "1. Customer Discovery & Suggestion for Review"
+description: "Log an interview takeaway or feature suggestion for team review (not yet committed engineering scope)."
+title: "[Review]: "
+labels: ["status: needs-review", "source: interview"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to log suggestions or observations from customer interviews for product and engineering review. Items logged here are **under evaluation** and are not committed product requirements until triaged and promoted.
+  - type: dropdown
+    id: classification
+    attributes:
+      label: "Potential Request Classification"
+      description: "If adopted, how would this item be classified under the System Design?"
+      options:
+        - "Configuration Change (Product defaults / Profile template / Customer overrides)"
+        - "Shared Enhancement (Improvement to existing shared service)"
+        - "New Shared Capability (New reusable product feature)"
+        - "Needs Triage / Unsure"
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: "Relevant Customer Profile(s)"
+      options:
+        - "Shared / All Profiles"
+        - "Banker"
+        - "VC"
+        - "Incubator"
+    validations:
+      required: true
+  - type: dropdown
+    id: output_dimension
+    attributes:
+      label: "Relevant Assessment Output Dimension"
+      options:
+        - "Startup Prospects (Common business assessment)"
+        - "Customer Fit (Suitability for customer objectives)"
+        - "Evidence Quality (Completeness, provenance, uncertainty)"
+        - "Multiple / General Workflow"
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: "Suggestion / Interview Observation"
+      description: "What was suggested or observed during the session?"
+    validations:
+      required: true
+  - type: textarea
+    id: review_questions
+    attributes:
+      label: "Open Questions & Trade-offs for Team Review"
+      description: "What should product and engineering evaluate before deciding whether to adopt this?"
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: "Session Provenance (Recording / Notes / Sheet Links)"
+      placeholder: "- Recording: \n- Notes Doc: \n- Sheet: "
